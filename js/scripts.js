@@ -1,23 +1,21 @@
 $(document).ready(function() {
-  $("button#hello").click(function() {
-    $("ul#user").prepend("<li>Hello!</li>");
-    $("ul#webpage").prepend("<li>why hello there!</li>");
-    
-    $("ul#user").children("li").first().click(function() {
-        $(this).remove();
-    });
-    $("ul#webpage").children("li").first().click(function() {
-        $(this).remove();
-    });
-});
+  $('#blanks form').submit(function(event) {
+    var person1Input = $("input#person1").val();
+    var person2Input = $("input#person2").val();
+    var animalInput = $("input#animal").val();
+    var exclamationInput = $("input#exclamation").val();
+    var verbInput = $("input#verb").val();
+    var nounInput = $("input#noun").val();
 
-  $("button#goodbye").click(function() {
-    $("ul#user").prepend("<li>goodbye!</li>");
-    $("ul#webpage").prepend("<li>goodbye! dear user!</li>");
-});
+    $(".person1").text(person1Input);
+    $(".person2").text(person2Input);
+    $('.animal').text(animalInput);
+    $('.exclamation').text(exclamationInput);
+    $('.verb').text(verbInput);
+    $('.noun').text(nounInput);
 
-  $("button#stop").click(function() {
-    $("ul#user").prepend("<li>stop copying me!</li>");
-    $("ul#webpage").prepend("<li>pardon me, i meant no offense.</li>");
+    $('#story').show();
+    event.preventDefault();
   });
+
 });
